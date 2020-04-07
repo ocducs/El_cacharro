@@ -27,7 +27,7 @@ int paso [4][4] = //Recomendada por el fabricante (par máximo)
 void setup() {
   // put your setup code here, to run once:
   set(pin);
-  Serial.begin(250000);
+  Serial.begin(115200);
   pinMode(12,INPUT_PULLUP);
   
 }
@@ -51,21 +51,20 @@ void loop() {
     if(tf-t0<400 && tf-t0>50){tiempo=tiempo+5000;}
   }
   
-    //Serial.print("Estado: ");
+    Serial.print("Estado: ");
   if(estado){
-    //Serial.print(" ON  ");
+    Serial.print(" ON  ");
   }
   else{
-    //Serial.print(" OFF ");
+    Serial.print(" OFF ");
   }
-  //Serial.print(" tiempo: ");
-  //Serial.print(tiempo);
+    Serial.print(" tiempo: ");
+    Serial.println(tiempo);
   
   if(estado){
     girar();
   }
-  //Serial.print(" tiempo de loop:");
-  //Serial.println(millis());
+    
   
 }
 void set(int param[]){
