@@ -18,10 +18,10 @@ int mS=14; //milisegundos por vuelta del motor. valor max 10 sin calentarse(fabr
 int pin[]={8,9,10,11};
 int paso [4][4] = //Recomendada por el fabricante (par máximo)
 {
-{1, 1, 0, 0},
-{0, 1, 1, 0},
-{0, 0, 1, 1},
-{1, 0, 0, 1}
+{1, 0, 0, 0},
+{0, 1, 0, 0},
+{0, 0, 1, 0},
+{0, 0, 0, 1}
 };
 
 void setup() {
@@ -96,10 +96,7 @@ void girar(){
       tAnterior=tActual;
       if(tiempo>0){
         
-        digitalWrite(pin[0],paso[ix][0]);
-        digitalWrite(pin[1],paso[ix][1]);
-        digitalWrite(pin[2],paso[ix][2]);
-        digitalWrite(pin[3],paso[ix][3]);
+        digitalWrite(pin[0],paso[ix][0]);digitalWrite(pin[1],paso[ix][1]);digitalWrite(pin[2],paso[ix][2]);digitalWrite(pin[3],paso[ix][3]);
         ix++;
         ix=ix%4;
         
